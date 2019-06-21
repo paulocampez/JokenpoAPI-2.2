@@ -1,12 +1,280 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿<!DOCTYPE html>
+<html lang="zxx">
+<head>
 
-<div class="text-center">
-    <h1 class="display-4">JoKenPo</h1>
+    <!-- Basic Page Needs
+    ================================================== -->
+    <title>JokenPo</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700|Roboto+Condensed:400,400i,700,700i" rel="stylesheet">
+
+    <!-- CSS
+    ================================================== -->
+    <!-- Vendor CSS -->
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    @*<link href="assets/fonts/font-awesome/css/all.min.css" rel="stylesheet">
+    <link href="assets/fonts/font-awesome/css/v4-shims.min.css" rel="stylesheet">
+    <link href="assets/fonts/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+    <link href="assets/vendor/magnific-popup/dist/magnific-popup.css" rel="stylesheet">
+    <link href="assets/vendor/slick/slick.css" rel="stylesheet">*@
 
 
+    <!-- Template CSS-->
+    <link href="~/css/site.css" rel="stylesheet">
 
 
-    @*<p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>*@
-</div>
+</head>
+<body data-template="template-esports">
+
+    <div class="site-wrapper clearfix">
+        <div class="site-overlay"></div>
+        <!-- Content
+        ================================================== -->
+        <div class="site-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+
+                        <!-- Widget: Event Result -->
+                        <aside class="widget card widget--sidebar widget-game-result">
+                            <div class="widget__title card__header">
+                                <h4>Match Overview</h4>
+                            </div>
+                            <div class="widget__content card__content">
+                                <!-- Game Score -->
+                                <div class="widget-game-result__section">
+                                    <div class="widget-game-result__section-inner">
+
+                                        <header class="widget-game-result__header widget-game-result__header--alt widget-game-result__header--alt-compact mb-4">
+                                            <h3 class="widget-game-result__title">Madison Cube Garden</h3>
+                                            <time class="widget-game-result__date" datetime="2018-04-26">Friday, April 26th</time>
+                                        </header>
+
+                                        <header class="widget-game-result__header">
+                                            <h3 class="widget-game-result__title">Pro League - World Championship</h3>
+                                            <div class="widget-game-result__subtitle">Quater-Finals</div>
+                                        </header>
+
+                                        <div class="widget-game-result__main">
+                                            <!-- 1st Team -->
+                                            <div class="widget-game-result__team widget-game-result__team--first">
+                                                <figure class="widget-game-result__team-logo">
+                                                    <a href="#"><img src="assets/images/esports/logos/alchemists-86x98.png" alt=""></a>
+                                                </figure>
+                                                <div class="widget-game-result__team-info">
+                                                    <h5 class="widget-game-result__team-name">Alchemists</h5>
+                                                    <div class="widget-game-result__team-desc">United States</div>
+                                                </div>
+                                            </div>
+                                            <!-- 1st Team / End -->
+
+                                            <div class="widget-game-result__score-wrap">
+                                                <div class="widget-game-result__score">
+                                                    <span class="widget-game-result__score-result widget-game-result__score-result--winner">8</span> <span class="widget-game-result__score-dash">-</span> <span class="widget-game-result__score-result widget-game-result__score-result--loser">5</span>
+                                                </div>
+                                                <div class="widget-game-result__score-label">
+                                                    32:29
+                                                    <span class="widget-game-result__score-sublabel">Game Duration</span>
+                                                </div>
+                                            </div>
+
+                                            <!-- 2nd Team -->
+                                            <div class="widget-game-result__team widget-game-result__team--second">
+                                                <figure class="widget-game-result__team-logo">
+                                                    <a href="#"><img src="assets/images/samples/logo-sharks--sm.png" alt=""></a>
+                                                </figure>
+                                                <div class="widget-game-result__team-info">
+                                                    <h5 class="widget-game-result__team-name">Sharks</h5>
+                                                    <div class="widget-game-result__team-desc">South Korea</div>
+                                                </div>
+                                            </div>
+                                            <!-- 2nd Team / End -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Game Score / End -->
+                                <!-- Game Statistics -->
+                                <div class="widget-game-result__section">
+                                    <header class="widget-game-result__subheader card__subheader card__subheader--sm card__subheader--nomargins">
+                                        <h5 class="widget-game-result__subtitle">Match Statistics</h5>
+                                    </header>
+                                    <div class="widget-game-result__section-inner">
+
+                                        <!-- Progress Stats Table -->
+                                        <table class="progress-table progress-table--sm-space">
+                                            <tbody>
+
+                                                <tr>
+                                                    <td class="progress-table__progress-label progress-table__progress-label--highlight">56</td>
+                                                    <td class="progress-table__progress-bar progress-table__progress-bar--first">
+                                                        <div class="progress progress--lines">
+                                                            <div class="progress__bar" style="width: 60%;" role="progressbar" aria-valuenow="56" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="progress-table__title">Total Kills</td>
+                                                    <td class="progress-table__progress-bar progress-table__progress-bar--second">
+                                                        <div class="progress progress--lines">
+                                                            <div class="progress__bar progress__bar--info" style="width: 40%;" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="progress-table__progress-label ">40</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="progress-table__progress-label ">23</td>
+                                                    <td class="progress-table__progress-bar progress-table__progress-bar--first">
+                                                        <div class="progress progress--lines">
+                                                            <div class="progress__bar" style="width: 30%;" role="progressbar" aria-valuenow="23" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="progress-table__title">Total Deaths</td>
+                                                    <td class="progress-table__progress-bar progress-table__progress-bar--second">
+                                                        <div class="progress progress--lines">
+                                                            <div class="progress__bar progress__bar--info" style="width: 70%;" role="progressbar" aria-valuenow="38" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="progress-table__progress-label progress-table__progress-label--highlight">38</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="progress-table__progress-label progress-table__progress-label--highlight">14</td>
+                                                    <td class="progress-table__progress-bar progress-table__progress-bar--first">
+                                                        <div class="progress progress--lines">
+                                                            <div class="progress__bar" style="width: 70%;" role="progressbar" aria-valuenow="14" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="progress-table__title">Total Assists</td>
+                                                    <td class="progress-table__progress-bar progress-table__progress-bar--second">
+                                                        <div class="progress progress--lines">
+                                                            <div class="progress__bar progress__bar--info" style="width: 30%;" role="progressbar" aria-valuenow="6" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="progress-table__progress-label ">6</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="progress-table__progress-label progress-table__progress-label--highlight">19</td>
+                                                    <td class="progress-table__progress-bar progress-table__progress-bar--first">
+                                                        <div class="progress progress--lines">
+                                                            <div class="progress__bar" style="width: 60%;" role="progressbar" aria-valuenow="19" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="progress-table__title">Pentakills</td>
+                                                    <td class="progress-table__progress-bar progress-table__progress-bar--second">
+                                                        <div class="progress progress--lines">
+                                                            <div class="progress__bar progress__bar--info" style="width: 40%;" role="progressbar" aria-valuenow="12" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="progress-table__progress-label ">12</td>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                        <!-- Progress Stats Table / End -->
+
+                                    </div>
+                                </div>
+                                <!-- Game Statistics / End -->
+                                <!-- Additional Stats -->
+                                <div class="widget-game-result__section">
+                                    <header class="widget-game-result__subheader card__subheader card__subheader--sm card__subheader--nomargins">
+                                        <h5 class="widget-game-result__subtitle">Additional Stats</h5>
+                                    </header>
+                                    <div class="widget-game-result__section-inner">
+
+                                        <!-- Circular Bars -->
+                                        <ul class="widget-game-result__stats-circular-bars list-unstyled">
+
+                                            <li class="widget-game-result__stats-circular-item">
+                                                <div class="widget-game-result__stats-circular-bar">
+                                                    <div class="circular circular--size-40">
+                                                        <div class="circular__bar" data-percent="60" data-track-color="#00ff5b" data-bar-color="#00deff">
+                                                            <svg role="img" class="df-icon df-icon--coin" data-toggle="tooltip" data-placement="top" title="10.2 - 6.3">
+                                                                <use xlink:href="assets/images/esports/icons-esports.svg#coin" />
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="widget-game-result__stats-meta">
+                                                    <span class="widget-game-result__stats-value">Gold</span>
+                                                    <span class="widget-game-result__stats-label">per minute</span>
+                                                </div>
+                                            </li>
+                                            <li class="widget-game-result__stats-circular-item">
+                                                <div class="widget-game-result__stats-circular-bar">
+                                                    <div class="circular circular--size-40">
+                                                        <div class="circular__bar" data-percent="28" data-track-color="#00ff5b" data-bar-color="#00deff">
+                                                            <svg role="img" class="df-icon df-icon--crosshair" data-toggle="tooltip" data-placement="top" title="2.3 - 0.8">
+                                                                <use xlink:href="assets/images/esports/icons-esports.svg#crosshair" />
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="widget-game-result__stats-meta">
+                                                    <span class="widget-game-result__stats-value">Kills</span>
+                                                    <span class="widget-game-result__stats-label">per minute</span>
+                                                </div>
+                                            </li>
+                                            <li class="widget-game-result__stats-circular-item">
+                                                <div class="widget-game-result__stats-circular-bar">
+                                                    <div class="circular circular--size-40">
+                                                        <div class="circular__bar" data-percent="20" data-track-color="#00ff5b" data-bar-color="#00deff">
+                                                            <svg role="img" class="df-icon df-icon--dead-face" data-toggle="tooltip" data-placement="top" title="2.6 - 9.2">
+                                                                <use xlink:href="assets/images/esports/icons-esports.svg#dead-face" />
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="widget-game-result__stats-meta">
+                                                    <span class="widget-game-result__stats-value">Deaths</span>
+                                                    <span class="widget-game-result__stats-label">per minute</span>
+                                                </div>
+                                            </li>
+                                            <li class="widget-game-result__stats-circular-item">
+                                                <div class="widget-game-result__stats-circular-bar">
+                                                    <div class="circular circular--size-40">
+                                                        <div class="circular__bar" data-percent="45" data-track-color="#00ff5b" data-bar-color="#00deff">
+                                                            <svg role="img" class="df-icon df-icon--thumbs-up" data-toggle="tooltip" data-placement="top" title="2.2 - 8.8">
+                                                                <use xlink:href="assets/images/esports/icons-esports.svg#thumbs-up" />
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="widget-game-result__stats-meta">
+                                                    <span class="widget-game-result__stats-value">Assists</span>
+                                                    <span class="widget-game-result__stats-label">per minute</span>
+                                                </div>
+                                            </li>
+
+                                        </ul>
+                                        <!-- Circular Bars / End -->
+
+                                    </div>
+                                </div>
+                                <!-- Additional Stats / End -->
+
+                            </div>
+                        </aside>
+                        <!-- Widget: Event Result / End -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*<!-- Javascript Files
+    ================================================== -->
+    <!-- Core JS -->
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/vendor/jquery/jquery-migrate.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/core.js"></script>
+
+    <!-- Vendor JS -->
+    <script src="assets/vendor/twitter/jquery.twitter.js"></script>
+    <script src="assets/vendor/jquery-duotone/jquery.duotone.min.js"></script>
+
+
+    <!-- Template JS -->
+    <script src="assets/js/init.js"></script>
+    <script src="assets/js/custom.js"></script>*@
+
+</body>
+</html>

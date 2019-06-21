@@ -1,0 +1,14 @@
+C:\Users\paulo.campez\source\repos\JokenpoAPI\Jokenpo.API\JoKenPoAPI\bin\Debug\netcoreapp2.2\JoKenPoAPI.deps.json
+C:\Users\paulo.campez\source\repos\JokenpoAPI\Jokenpo.API\JoKenPoAPI\bin\Debug\netcoreapp2.2\JoKenPoAPI.runtimeconfig.json
+C:\Users\paulo.campez\source\repos\JokenpoAPI\Jokenpo.API\JoKenPoAPI\bin\Debug\netcoreapp2.2\JoKenPoAPI.runtimeconfig.dev.json
+C:\Users\paulo.campez\source\repos\JokenpoAPI\Jokenpo.API\JoKenPoAPI\bin\Debug\netcoreapp2.2\JoKenPoAPI.dll
+C:\Users\paulo.campez\source\repos\JokenpoAPI\Jokenpo.API\JoKenPoAPI\bin\Debug\netcoreapp2.2\JoKenPoAPI.pdb
+C:\Users\paulo.campez\source\repos\JokenpoAPI\Jokenpo.API\JoKenPoAPI\obj\Debug\netcoreapp2.2\JoKenPoAPI.csproj.CoreCompileInputs.cache
+C:\Users\paulo.campez\source\repos\JokenpoAPI\Jokenpo.API\JoKenPoAPI\obj\Debug\netcoreapp2.2\JoKenPoAPI.RazorAssemblyInfo.cache
+C:\Users\paulo.campez\source\repos\JokenpoAPI\Jokenpo.API\JoKenPoAPI\obj\Debug\netcoreapp2.2\JoKenPoAPI.RazorAssemblyInfo.cs
+C:\Users\paulo.campez\source\repos\JokenpoAPI\Jokenpo.API\JoKenPoAPI\obj\Debug\netcoreapp2.2\JoKenPoAPI.AssemblyInfoInputs.cache
+C:\Users\paulo.campez\source\repos\JokenpoAPI\Jokenpo.API\JoKenPoAPI\obj\Debug\netcoreapp2.2\JoKenPoAPI.AssemblyInfo.cs
+C:\Users\paulo.campez\source\repos\JokenpoAPI\Jokenpo.API\JoKenPoAPI\obj\Debug\netcoreapp2.2\JoKenPoAPI.RazorTargetAssemblyInfo.cache
+C:\Users\paulo.campez\source\repos\JokenpoAPI\Jokenpo.API\JoKenPoAPI\obj\Debug\netcoreapp2.2\JoKenPoAPI.dll
+C:\Users\paulo.campez\source\repos\JokenpoAPI\Jokenpo.API\JoKenPoAPI\obj\Debug\netcoreapp2.2\JoKenPoAPI.pdb
+C:\Users\paulo.campez\source\repos\JokenpoAPI\Jokenpo.API\JoKenPoAPI\obj\Debug\netcoreapp2.2\JoKenPoAPI.csprojAssemblyReference.cache

@@ -1,0 +1,14 @@
+C:\Users\paulo.campez\source\repos\JokenpoAPI\Jokenpo.API\Jokenpo.Test\bin\Debug\netcoreapp2.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\Users\paulo.campez\source\repos\JokenpoAPI\Jokenpo.API\Jokenpo.Test\bin\Debug\netcoreapp2.1\xunit.runner.reporters.netcoreapp10.dll
+C:\Users\paulo.campez\source\repos\JokenpoAPI\Jokenpo.API\Jokenpo.Test\bin\Debug\netcoreapp2.1\xunit.runner.utility.netcoreapp10.dll
+C:\Users\paulo.campez\source\repos\JokenpoAPI\Jokenpo.API\Jokenpo.Test\bin\Debug\netcoreapp2.1\Jokenpo.Test.deps.json
+C:\Users\paulo.campez\source\repos\JokenpoAPI\Jokenpo.API\Jokenpo.Test\bin\Debug\netcoreapp2.1\Jokenpo.Test.runtimeconfig.json
+C:\Users\paulo.campez\source\repos\JokenpoAPI\Jokenpo.API\Jokenpo.Test\bin\Debug\netcoreapp2.1\Jokenpo.Test.runtimeconfig.dev.json
+C:\Users\paulo.campez\source\repos\JokenpoAPI\Jokenpo.API\Jokenpo.Test\bin\Debug\netcoreapp2.1\Jokenpo.Test.dll
+C:\Users\paulo.campez\source\repos\JokenpoAPI\Jokenpo.API\Jokenpo.Test\bin\Debug\netcoreapp2.1\Jokenpo.Test.pdb
+C:\Users\paulo.campez\source\repos\JokenpoAPI\Jokenpo.API\Jokenpo.Test\obj\Debug\netcoreapp2.1\Jokenpo.Test.csprojAssemblyReference.cache
+C:\Users\paulo.campez\source\repos\JokenpoAPI\Jokenpo.API\Jokenpo.Test\obj\Debug\netcoreapp2.1\Jokenpo.Test.csproj.CoreCompileInputs.cache
+C:\Users\paulo.campez\source\repos\JokenpoAPI\Jokenpo.API\Jokenpo.Test\obj\Debug\netcoreapp2.1\Jokenpo.Test.AssemblyInfoInputs.cache
+C:\Users\paulo.campez\source\repos\JokenpoAPI\Jokenpo.API\Jokenpo.Test\obj\Debug\netcoreapp2.1\Jokenpo.Test.AssemblyInfo.cs
+C:\Users\paulo.campez\source\repos\JokenpoAPI\Jokenpo.API\Jokenpo.Test\obj\Debug\netcoreapp2.1\Jokenpo.Test.dll
+C:\Users\paulo.campez\source\repos\JokenpoAPI\Jokenpo.API\Jokenpo.Test\obj\Debug\netcoreapp2.1\Jokenpo.Test.pdb

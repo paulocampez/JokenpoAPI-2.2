@@ -1,0 +1,9 @@
+C:\Users\paulo.campez\source\repos\JokenpoAPI\Jokenpo.API\Jokenpo.Model\bin\Debug\Jokenpo.Model.dll
+C:\Users\paulo.campez\source\repos\JokenpoAPI\Jokenpo.API\Jokenpo.Model\bin\Debug\Jokenpo.Model.pdb
+C:\Users\paulo.campez\source\repos\JokenpoAPI\Jokenpo.API\Jokenpo.Model\obj\Debug\Jokenpo.Model.csprojAssemblyReference.cache
+C:\Users\paulo.campez\source\repos\JokenpoAPI\Jokenpo.API\Jokenpo.Model\obj\Debug\Jokenpo.Model.csproj.CoreCompileInputs.cache
+C:\Users\paulo.campez\source\repos\JokenpoAPI\Jokenpo.API\Jokenpo.Model\obj\Debug\Jokenpo.Model.dll
+C:\Users\paulo.campez\source\repos\JokenpoAPI\Jokenpo.API\Jokenpo.Model\obj\Debug\Jokenpo.Model.pdb
+C:\Users\paulo.campez\source\repos\JokenpoAPI\Jokenpo.API\Jokenpo.Model\bin\Debug\System.ComponentModel.Annotations.dll
+C:\Users\paulo.campez\source\repos\JokenpoAPI\Jokenpo.API\Jokenpo.Model\bin\Debug\System.ComponentModel.Annotations.xml
+C:\Users\paulo.campez\source\repos\JokenpoAPI\Jokenpo.API\Jokenpo.Model\obj\Debug\Jokenpo.Model.csproj.CopyComplete

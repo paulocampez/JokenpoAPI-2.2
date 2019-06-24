@@ -31,3 +31,4 @@ C:\Users\paulo.campez\source\repos\JokenpoAPI\Jokenpo.API\Jokenpo.MVC\obj\Debug\
 C:\Users\paulo.campez\source\repos\JokenpoAPI\Jokenpo.API\Jokenpo.MVC\bin\Debug\netcoreapp2.2\Jokenpo.Model.dll
 C:\Users\paulo.campez\source\repos\JokenpoAPI\Jokenpo.API\Jokenpo.MVC\bin\Debug\netcoreapp2.2\Jokenpo.Model.pdb
 C:\Users\paulo.campez\source\repos\JokenpoAPI\Jokenpo.API\Jokenpo.MVC\obj\Debug\netcoreapp2.2\Razor\Views\Home\Jokenpo.g.cshtml.cs
+C:\Users\paulo.campez\source\repos\JokenpoAPI\Jokenpo.API\Jokenpo.MVC\obj\Debug\netcoreapp2.2\Razor\Views\Home\BuscaJogos.g.cshtml.cs

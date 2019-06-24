@@ -22,5 +22,6 @@ namespace Jokenpo.Model
         public int? VitoriaJogador2 { get; set; }
         public string Status { get; set; }
         public int? RodadaAtual { get; set; }
+        public string Vencedor { get; set; }
     }
 }

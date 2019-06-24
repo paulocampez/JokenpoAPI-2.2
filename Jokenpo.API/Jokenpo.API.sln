@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28803.156
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jokenpo.Test", "Jokenpo.Test\Jokenpo.Test.csproj", "{6D93193B-C125-4403-BCAC-24532400D885}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jokenpo.Test", "Jokenpo.Test\Jokenpo.Test.csproj", "{6D93193B-C125-4403-BCAC-24532400D885}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jokenpo.MVC", "Jokenpo.MVC\Jokenpo.MVC.csproj", "{99C553C9-A11C-49BD-8F6B-EBCFB506D3CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jokenpo.MVC", "Jokenpo.MVC\Jokenpo.MVC.csproj", "{99C553C9-A11C-49BD-8F6B-EBCFB506D3CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JoKenPoAPI", "JoKenPoAPI\JoKenPoAPI.csproj", "{234D041C-5D62-486A-8088-59094F25DA57}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JoKenPoAPI", "JoKenPoAPI\JoKenPoAPI.csproj", "{234D041C-5D62-486A-8088-59094F25DA57}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jokenpo.Model", "Jokenpo.Model\Jokenpo.Model.csproj", "{362D1092-E152-498D-A2A3-B5FFF516F1BF}"
 EndProject

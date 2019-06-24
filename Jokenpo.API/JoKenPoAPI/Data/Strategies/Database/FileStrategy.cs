@@ -12,11 +12,11 @@ namespace JoKenPoAPI.Data.Strategies.Database
     {
         string _filePath = "jogo.txt";
 
-        public bool Post()
+        public bool Post(Jogo jogo)
         {
             using (var writeFileConfig = new StreamWriter(_filePath, append: true))
             {
-                string putJogo = "Jogador1: Paulo; Jogador2: Joao, DataInicio: 22/01/2019; Resultado: Vitoria Jogador1; JogadaJogador1: Pedra; JogadaJogador2: Tesoura; Status: ATIVO;";
+                string putJogo = jogo.Jogador1 + ";" + jogo.Jogador2 + ";" + jogo.DataInicio + ";" + jogo.Resultado + ";" + jogo.Jogadas + ";" + jogo.Vencedor;
                 writeFileConfig.WriteLine(putJogo);
                 return true;
             }
@@ -45,15 +45,13 @@ namespace JoKenPoAPI.Data.Strategies.Database
         }
 
 
-        public List<Jogo> Get(string pathConfigFile)
+        public List<Jogo> Get()
         {
             List<Jogo> lstJogo = new List<Jogo>();
             DateTime dateResult = new DateTime();
-            var culture = CultureInfo.CreateSpecificCulture("en-US");
-            var style = NumberStyles.AllowDecimalPoint | NumberStyles.AllowThousands;
-            double salario = new double();
+
             var configInformation = new List<string>();
-            using (var readerFileConfig = new StreamReader(pathConfigFile))
+            using (var readerFileConfig = new StreamReader(_filePath))
                 while (readerFileConfig.Peek() >= 0)
                     configInformation.Add(readerFileConfig.ReadLine());
 
@@ -66,14 +64,15 @@ namespace JoKenPoAPI.Data.Strategies.Database
                 if (DateTime.TryParse(arrayFuncionario[2].ToString(), out dateResult))
                     jogo.DataInicio = dateResult;
                 jogo.Resultado = arrayFuncionario[3].ToString();
-                jogo.JogadaJogador1 = arrayFuncionario[4].ToString();
-                jogo.JogadaJogador2 = arrayFuncionario[5].ToString();
-                jogo.Status = arrayFuncionario[6].ToString();
+                jogo.Jogadas = Int32.Parse(arrayFuncionario[4].ToString());
+                jogo.Vencedor = arrayFuncionario[5].ToString();
 
                 lstJogo.Add(jogo);
             }
 
             return lstJogo;
         }
+
+      
     }
 }

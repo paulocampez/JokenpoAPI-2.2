@@ -1,1 +1,4 @@
-Jogador1: Paulo; Jogador2: Joao, DataInicio: 22/01/2019; Resultado: Vitoria Jogador1; JogadaJogador1: Pedra; JogadaJogador2: Tesoura; Status: ATIVO;
+Paulo;Computador;24/06/2019 15:23:57;Jogador1;2;Paulo
+Paulo;Computador;24/06/2019 15:23:57;Jogador1;2;Paulo
+Paulo;Computador;24/06/2019 15:23:57;Jogador1;2;Paulo
+Paulo;Computador;24/06/2019 15:23:57;Jogador1;2;Paulo

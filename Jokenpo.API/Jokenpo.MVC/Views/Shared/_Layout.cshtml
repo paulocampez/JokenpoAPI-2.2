@@ -15,15 +15,32 @@
 
 </head>
 <body data-template="template-esports">
+    <div class="header__primary">
+        <div class="container">
+            <div class="header__primary-inner">
 
+                <nav class="main-nav">
+                    <ul class="main-nav__list">
+
+                        <li class="has-children">
+                            <span class="main-nav__toggle"></span><a href="@Url.Action("Index")">Home</a>
+                           
+                        </li>
+                        <li class="has-children">
+                            <span class="main-nav__toggle"></span><a href="@Url.Action("BuscaJogos")">Historico</a>
+                        </li>
+                    </ul>
+                </nav>
+
+            </div>
+        </div>
+    </div>
     @RenderBody()
     <script src="~/js/jquery.min.js"></script>
     <script src="~/js/jquery-migrate.min.js"></script>
     <script src="~/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/core.js"></script>
 
-    <!-- Template JS -->
-    @*<script src="js/init.js"></script>*@
     <script src="~/js/custom.js"></script>
     @RenderSection("Scripts", required: false)
 </body>

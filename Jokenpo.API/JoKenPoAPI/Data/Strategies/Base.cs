@@ -1,4 +1,5 @@
-﻿using JoKenPoAPI.Data.Strategies.Database;
+﻿using Jokenpo.Model;
+using JoKenPoAPI.Data.Strategies.Database;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,9 +16,14 @@ namespace JoKenPoAPI.Data.Strategies
             _jogo = ijogo;
         }
 
-        public bool Post()
+        public bool Post(Jogo jogo)
         {
-            return _jogo.Post();
+            return _jogo.Post(jogo);
+        }
+
+        public List<Jogo> Get()
+        {
+            return _jogo.Get();
         }
     }
 }

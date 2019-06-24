@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Jokenpo.Model;
 using JoKenPoAPI.Data;
 using JoKenPoAPI.Data.Strategies;
 using JoKenPoAPI.Data.Strategies.Database;
@@ -23,24 +24,36 @@ namespace JoKenPoAPI.Controllers
 
         // GET api/values
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public ActionResult<List<Jogo>> Get()
         {
-            return new string[] { "value1", "value2" };
+            var context = new Context(new  FileStrategy());
+            List<Jogo> lstJogo = new List<Jogo>();
+
+            lstJogo = context.Get();
+
+            if (lstJogo.Count == 0)
+                return NotFound();
+
+            return lstJogo;
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
         public ActionResult<string> Get(int id)
         {
-            var context = new Context(new FileStrategy());
-            var success = context.Post();
+            //var context = new Context(new FileStrategy());
+            
             return "value";
         }
 
         // POST api/values
-        [HttpPost]
-        public void Post([FromBody] string value)
+        [Microsoft.AspNetCore.Mvc.HttpPost]
+        public bool Post([FromBody] Jogo value)
         {
+            var context = new Context(new FileStrategy());
+            var success = context.Post(value);
+
+            return true;
         }
 
         // PUT api/values/5

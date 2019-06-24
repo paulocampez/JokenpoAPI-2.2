@@ -20,7 +20,12 @@ namespace Jokenpo.MVC.Controllers
         {
             return View();
         }
+        public IActionResult BuscaJogos()
+        {
+            var jogos = GetJogo();
 
+            return View(jogos);
+        }
         public IActionResult Privacy()
         {
             return View();
@@ -30,27 +35,6 @@ namespace Jokenpo.MVC.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
-        public List<Jogo> Getjogo()
-        {
-            List<Jogo> lstJogo = new List<Jogo>();
-            string url = "http://localhost:52325/api/Home/";
-            HttpWebRequest getRequest = (HttpWebRequest)WebRequest.Create(url);
-            getRequest.Method = "GET";
-            try
-            {
-                var getResponse = (HttpWebResponse)getRequest.GetResponse();
-                Stream newStream = getResponse.GetResponseStream();
-                StreamReader sr = new StreamReader(newStream);
-                var result = sr.ReadToEnd();
-                lstJogo = JsonConvert.DeserializeObject<List<Jogo>>(result);
-                return lstJogo;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("erro api");
-            }
-
         }
         public ActionResult Jokenpo(Jogo model)
         {
@@ -87,22 +71,92 @@ namespace Jokenpo.MVC.Controllers
             else
                 model.Jogadas = 0;
 
+
             model.JogadaJogador1 = resposta;
             model = Resultado(model);
             model.RodadaAtual = model.RodadaAtual + 1;
-            ViewBag.EncerrarJogo = model.RodadaAtual == model.Jogadas;
+            bool podeSalvarJogo = false;
 
-            var vencedor = model.VitoriaJogador1 > model.VitoriaJogador2 ? model.Jogador1 : model.VitoriaJogador2 > model.VitoriaJogador1 ? model.Jogador2 : "Empate";
-            ViewBag.Vencedor = vencedor;
+            model.Vencedor = model.VitoriaJogador1 > model.VitoriaJogador2 ? model.Jogador1 : model.VitoriaJogador2 > model.VitoriaJogador1 ? model.Jogador2 : "Empate";
+            ViewBag.Vencedor = model.Vencedor;
+            if (podeSalvarJogo = model.RodadaAtual == model.Jogadas)
+            {
+                model.DataInicio = DateTime.Now;
+                SalvaJogo(model);
+            }
+            ViewBag.EncerrarJogo = podeSalvarJogo;
+
+            model.Vencedor = model.VitoriaJogador1 > model.VitoriaJogador2 ? model.Jogador1 : model.VitoriaJogador2 > model.VitoriaJogador1 ? model.Jogador2 : "Empate";
+            ViewBag.Vencedor = model.Vencedor;
             return View(model);
-
-
+        }
+        public List<Jogo> GetByUrl(string url)
+        {
+            List<Jogo> lstJogo = new List<Jogo>();
+            HttpWebRequest getRequest = (HttpWebRequest)WebRequest.Create(url);
+            getRequest.Method = "GET";
+            try
+            {
+                var getResponse = (HttpWebResponse)getRequest.GetResponse();
+                Stream newStream = getResponse.GetResponseStream();
+                StreamReader sr = new StreamReader(newStream);
+                var result = sr.ReadToEnd();
+                lstJogo = JsonConvert.DeserializeObject<List<Jogo>>(result);
+                return lstJogo;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("erro api");
+            }
 
         }
 
-        private void SalvaJogo(Jogo jogo)
+        public List<Jogo> GetJogo()
         {
+            List<Jogo> lstJogo = new List<Jogo>();
+            string url = "https://localhost:44384/api/Values/";
+            HttpWebRequest getRequest = (HttpWebRequest)WebRequest.Create(url);
+            getRequest.Method = "GET";
+            try
+            {
+                var getResponse = (HttpWebResponse)getRequest.GetResponse();
+                Stream newStream = getResponse.GetResponseStream();
+                StreamReader sr = new StreamReader(newStream);
+                var result = sr.ReadToEnd();
+                lstJogo = JsonConvert.DeserializeObject<List<Jogo>>(result);
+                return lstJogo;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("erro api");
+            }
 
+        }
+        private bool SalvaJogo(Jogo jogo)
+        {
+            try
+            {
+                using (var client = new HttpClient())
+                {
+                    client.BaseAddress = new Uri("https://localhost:44384/api/Values");
+
+                    //HTTP POST
+                    var postTask = client.PostAsJsonAsync<Jogo>("Values", jogo);
+                    postTask.Wait();
+
+                    var result = postTask.Result;
+                    if (result.IsSuccessStatusCode)
+                    {
+                        return true;
+                    }
+                }
+                ModelState.AddModelError(string.Empty, "Server Error. Please contact administrator.");
+                return false;
+            }
+            catch(Exception ex)
+            {
+                return false;
+            }
         }
 
         public Jogo Resultado(Jogo model)

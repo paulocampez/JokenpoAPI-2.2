@@ -34,7 +34,7 @@ namespace Jokenpo.MVC.Controllers
         public List<Jogo> Getjogo()
         {
             List<Jogo> lstJogo = new List<Jogo>();
-            string url = "http://localhost:59279/api/Home/";
+            string url = "http://localhost:52325/api/Home/";
             HttpWebRequest getRequest = (HttpWebRequest)WebRequest.Create(url);
             getRequest.Method = "GET";
             try
@@ -52,7 +52,111 @@ namespace Jokenpo.MVC.Controllers
             }
 
         }
+        public ActionResult Jokenpo(Jogo model)
+        {
+            ViewBag.EncerrarJogo = false;
+            model.Jogador2 = "Computador";
+            model.DataInicio = DateTime.Now;
+            return View(model);
+        }
+        [HttpPost]
+        public ActionResult Jokenpo(IFormCollection collection, string resposta)
+        {
+            var tempInt = 0;
+            Jogo model = new Jogo();
+            model.Jogadas = Int32.Parse(collection["Jogadas"]);
+            model.Jogador1 = collection["Jogador1"].ToString();
+            model.Jogador2 = collection["Jogador2"].ToString();
+            if (Int32.TryParse(collection["RodadaAtual"].ToString(), out tempInt))
+                model.RodadaAtual = tempInt;
+            else
+                model.RodadaAtual = 0;
 
+            if (Int32.TryParse(collection["VitoriaJogador1"].ToString(), out tempInt))
+                model.VitoriaJogador1 = tempInt;
+            else
+                model.VitoriaJogador1 = 0;
+
+            if (Int32.TryParse(collection["VitoriaJogador2"].ToString(), out tempInt))
+                model.VitoriaJogador2 = tempInt;
+            else
+                model.VitoriaJogador2 = 0;
+
+            if (Int32.TryParse(collection["Jogadas"].ToString(), out tempInt))
+                model.Jogadas = tempInt;
+            else
+                model.Jogadas = 0;
+
+            model.JogadaJogador1 = resposta;
+            model = Resultado(model);
+            model.RodadaAtual = model.RodadaAtual + 1;
+            ViewBag.EncerrarJogo = model.RodadaAtual == model.Jogadas;
+
+            var vencedor = model.VitoriaJogador1 > model.VitoriaJogador2 ? model.Jogador1 : model.VitoriaJogador2 > model.VitoriaJogador1 ? model.Jogador2 : "Empate";
+            ViewBag.Vencedor = vencedor;
+            return View(model);
+
+
+
+        }
+
+        private void SalvaJogo(Jogo jogo)
+        {
+
+        }
+
+        public Jogo Resultado(Jogo model)
+        {
+            model.JogadaJogador2 = GetJogadaComputador();
+            model.Resultado = GetResultado(model.JogadaJogador1, model.JogadaJogador2);
+            if (model.Resultado == "Jogador1")
+                model.VitoriaJogador1 = model.VitoriaJogador1 + 1;
+            else if (model.Resultado == "Jogador2")
+                model.VitoriaJogador2 = model.VitoriaJogador2 + 1;
+
+            return model;
+        }
+
+        public string GetResultado(string jogadaJogador1, string jogadaJogador2)
+        {
+            string vencedor;
+            if (jogadaJogador1 == "Pedra" && jogadaJogador2 == "Papel")
+                vencedor = "Jogador2";
+            else if (jogadaJogador1 == "Papel" && jogadaJogador2 == "Pedra")
+                vencedor = "Jogador1";
+            else if (jogadaJogador1 == "Papel" && jogadaJogador2 == "Tesoura")
+                vencedor = "Jogador2";
+            else if (jogadaJogador1 == "Tesoura" && jogadaJogador2 == "Papel")
+                vencedor = "Jogador1";
+            else if (jogadaJogador1 == "Tesoura" && jogadaJogador2 == "Pedra")
+                vencedor = "Jogador2";
+            else if (jogadaJogador1 == "Pedra" && jogadaJogador2 == "Tesoura")
+                vencedor = "Jogador1";
+            else
+                vencedor = "Empate";
+
+            return vencedor;
+        }
+
+        public string GetJogadaComputador()
+        {
+            string jogadaComputador = "";
+            Random rnd = new Random();
+            int jogo = rnd.Next(1, 4);
+            switch (jogo)
+            {
+                case 1:
+                    jogadaComputador = "Tesoura";
+                    break;
+                case 2:
+                    jogadaComputador = "Pedra";
+                    break;
+                case 3:
+                    jogadaComputador = "Papel";
+                    break;
+            }
+            return jogadaComputador;
+        }
 
         public ActionResult Create()
         {
@@ -80,7 +184,7 @@ namespace Jokenpo.MVC.Controllers
             {
                 using (var client = new HttpClient())
                 {
-                    client.BaseAddress = new Uri("http://localhost:59279/api/Home");
+                    client.BaseAddress = new Uri("http://localhost:52325/api/Home");
 
                     //HTTP POST
                     var postTask = client.PostAsJsonAsync<Jogo>("Home", jogo);

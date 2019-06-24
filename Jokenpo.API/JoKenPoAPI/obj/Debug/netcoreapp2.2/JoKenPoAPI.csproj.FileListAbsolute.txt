@@ -12,3 +12,6 @@ C:\Users\paulo.campez\source\repos\JokenpoAPI\Jokenpo.API\JoKenPoAPI\obj\Debug\n
 C:\Users\paulo.campez\source\repos\JokenpoAPI\Jokenpo.API\JoKenPoAPI\obj\Debug\netcoreapp2.2\JoKenPoAPI.dll
 C:\Users\paulo.campez\source\repos\JokenpoAPI\Jokenpo.API\JoKenPoAPI\obj\Debug\netcoreapp2.2\JoKenPoAPI.pdb
 C:\Users\paulo.campez\source\repos\JokenpoAPI\Jokenpo.API\JoKenPoAPI\obj\Debug\netcoreapp2.2\JoKenPoAPI.csprojAssemblyReference.cache
+C:\Users\paulo.campez\source\repos\JokenpoAPI\Jokenpo.API\JoKenPoAPI\bin\Debug\netcoreapp2.2\Jokenpo.Model.dll
+C:\Users\paulo.campez\source\repos\JokenpoAPI\Jokenpo.API\JoKenPoAPI\bin\Debug\netcoreapp2.2\Jokenpo.Model.pdb
+C:\Users\paulo.campez\source\repos\JokenpoAPI\Jokenpo.API\JoKenPoAPI\obj\Debug\netcoreapp2.2\JoKenPoAPI.csproj.CopyComplete

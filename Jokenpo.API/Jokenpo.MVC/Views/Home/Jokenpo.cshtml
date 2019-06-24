@@ -1,0 +1,233 @@
+﻿@model Jokenpo.Model.Jogo
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var divClass = "icobox__icon icobox__icon--border icobox__icon--lg icobox__icon--circle";
+    var encerrarJogo = (bool)ViewBag.EncerrarJogo;
+    var divClassGreen = "icobox__icon icobox__icon--filled icobox__icon--lg icobox__icon--circle";
+    var display = encerrarJogo ? "none" : "";
+    var vencedor = (string)ViewBag.Vencedor;
+}
+
+
+<form action="Jokenpo" method="post">
+    @Html.HiddenFor(p => p.Jogador2)
+    @Html.HiddenFor(p => p.Jogador1)
+    @Html.HiddenFor(p => p.Jogadas, Model.Jogadas)
+    @Html.HiddenFor(p => p.JogadaJogador2)
+    @Html.HiddenFor(p => p.JogadaJogador1)
+    @Html.HiddenFor(p => p.Resultado)
+
+    @Html.HiddenFor(p => p.VitoriaJogador1, Model.VitoriaJogador1)
+    @Html.HiddenFor(p => p.VitoriaJogador2, Model.VitoriaJogador2)
+    @Html.HiddenFor(p => p.Status)
+    @Html.HiddenFor(p => p.RodadaAtual, Model.RodadaAtual)
+    <div class="site-wrapper clearfix" style="display : @display ">
+        <div class="site-overlay"></div>
+        <div class="site-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <aside class="widget card widget--sidebar widget-game-result">
+                            <div class="widget__title card__header">
+                                <h4>Match Overview</h4>
+                            </div>
+                            <div class="widget__content card__content">
+
+                                <div class="widget-game-result__section">
+                                    <div class="widget-game-result__section-inner">
+
+                                        <header class="widget-game-result__header widget-game-result__header--alt widget-game-result__header--alt-compact mb-4">
+                                            <time class="widget-game-result__date" datetime="@DateTime.Now.ToShortDateString()">@DateTime.Now</time>
+                                        </header>
+
+                                        <header class="widget-game-result__header">
+                                            <h3 class="widget-game-result__title">Campeonato de JoKenPo</h3>
+                                            <h3 class="widget-game-result__title">Rodada Atual: @Html.DisplayFor(p => p.RodadaAtual)</h3>
+                                            <h3 class="widget-game-result__title">Resultado: @Html.DisplayFor(p => p.Resultado)</h3>
+                                            <h3 class="widget-game-result__title">Rodadas: @Html.DisplayFor(p => p.Jogadas)</h3>
+                                        </header>
+
+                                        <div class="widget-game-result__main">
+
+                                            <div class="widget-game-result__team widget-game-result__team--first">
+                                                <figure class="widget-game-result__team-logo">
+                                                    <a href="#"><img src="~/assets/alchemists-86x98.png" alt=""></a>
+                                                </figure>
+                                                <div class="widget-game-result__team-info">
+                                                    <h5 class="widget-game-result__team-name">@Html.DisplayFor(p => p.Jogador1)</h5>
+                                                </div>
+                                            </div>
+                                            <div class="widget-game-result__score-wrap">
+                                                <div class="widget-game-result__score">
+                                                    <span class="widget-game-result__score-result widget-game-result__score-result--winner">@Html.DisplayFor(p => p.VitoriaJogador1)</span> <span class="widget-game-result__score-dash">-</span> <span class="widget-game-result__score-result widget-game-result__score-result--loser">@Html.DisplayFor(p => p.VitoriaJogador2)</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="widget-game-result__team widget-game-result__team--second">
+                                                <figure class="widget-game-result__team-logo">
+                                                    <a href="#"><img src="~/assets/logo-sharks--sm.png" alt=""></a>
+                                                </figure>
+                                                <div class="widget-game-result__team-info">
+                                                    <h5 class="widget-game-result__team-name">@Html.DisplayFor(p => p.Jogador2)</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="widget-game-result__section">
+                                    <header class="widget-game-result__subheader card__subheader card__subheader--sm card__subheader--nomargins">
+                                        <h5 class="widget-game-result__subtitle">Jogada do @Html.DisplayFor(p => p.Jogador1)</h5>
+                                    </header>
+                                    <div class="clear"></div>
+                                    <div class="row widget-game-result__section-inner">
+                                        <div class="clear"></div>
+                                        <div class="col-md-4">
+                                            <div class="icobox icobox--center">
+                                                <button id="btnPapel" type="submit" class="@divClass" value="Papel" name="resposta">
+                                                    <i class="fa fa-hand-paper"></i>
+                                                </button>
+                                                <div class="icobox__content">
+                                                    <h4 class="icobox__title icobox__title--lg">Papel</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="icobox icobox--center">
+                                                <button id="btnPedra" type="submit" class="@divClass" value="Pedra" name="resposta">
+                                                    <i class="fa fa-hand-rock"></i>
+                                                </button>
+                                                <div class="icobox__content">
+                                                    <h4 class="icobox__title icobox__title--lg">Pedra</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="icobox icobox--center">
+                                                <button id="btnTesoura" type="submit" class="@divClass" value="Tesoura" name="resposta">
+                                                    <i class="fa fa-hand-scissors"></i>
+                                                </button>
+                                                <div class="icobox__content">
+                                                    <h4 class="icobox__title icobox__title--lg">Tesoura</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="widget-game-result__section">
+                                    <header class="widget-game-result__subheader card__subheader card__subheader--sm card__subheader--nomargins">
+                                        <h5 class="widget-game-result__subtitle">Jogada do @Html.DisplayFor(p => p.Jogador2)</h5>
+                                    </header>
+                                    <div class="clear"></div>
+                                    <div class="row widget-game-result__section-inner">
+                                        <div class="clear"></div>
+                                        <div class="col-md-4">
+                                            <div class="icobox icobox--center">
+                                                <div class="@divClass" id="btnPapel2">
+                                                    <i class="fa fa-hand-paper"></i>
+                                                </div>
+                                                <div class="icobox__content">
+                                                    <h4 class="icobox__title icobox__title--lg">Papel</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="icobox icobox--center">
+                                                <div class="@divClass" id="btnPedra2">
+                                                    <i class="fa fa-hand-rock"></i>
+                                                </div>
+                                                <div class="icobox__content">
+                                                    <h4 class="icobox__title icobox__title--lg">Pedra</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="icobox icobox--center">
+                                                <div class="@divClass" id="btnTesoura2">
+                                                    <i class="fa fa-hand-scissors"></i>
+                                                </div>
+                                                <div class="icobox__content">
+                                                    <h4 class="icobox__title icobox__title--lg">Tesoura</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                    </aside>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+@if (encerrarJogo)
+{
+    <div class="site-wrapper clearfix">
+        <div class="site-overlay"></div>
+        <div class="site-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="twitch-stream-wrapper">
+                            <a href="#" class="twitch-stream   card">
+                                <div class="twitch-stream__overlay twitch-stream__overlay--bg3 effect-duotone effect-duotone--base"><div class="effect-duotone__layer"><div class="effect-duotone__layer-inner"></div></div></div>
+                                <figure class="twitch-stream__img ">
+                                    <img src="assets/images/esports/samples/twitch-streamer-4.png" alt="">
+                                </figure>
+                                <div class="twitch-stream__body">
+                                    <h5 class="twitch-stream__title">@vencedor</h5>
+                                    @if (vencedor != "Empate")
+                                    {
+                                        <div class="twitch-stream__info">Jogador @vencedor  ganhou a partida!</div>
+                                    }
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+<script src="~/js/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function ($) {
+        var jogada1 = $("#JogadaJogador1").val();
+        var tesoura = $("#btnTesoura");
+        var pedra = $("#btnPedra");
+        var papel = $("#btnPapel");
+
+        if (jogada1 != null) {
+            if (jogada1 == "Papel") {
+                papel.removeClass("icobox__icon icobox__icon--border icobox__icon--lg icobox__icon--circle").addClass("icobox__icon icobox__icon--filled icobox__icon--lg icobox__icon--circle");
+            }
+            else if (jogada1 == "Tesoura") {
+                tesoura.removeClass("icobox__icon icobox__icon--border icobox__icon--lg icobox__icon--circle").addClass("icobox__icon icobox__icon--filled icobox__icon--lg icobox__icon--circle");
+            }
+            else if (jogada1 == "Pedra") {
+                pedra.removeClass("icobox__icon icobox__icon--border icobox__icon--lg icobox__icon--circle").addClass("icobox__icon icobox__icon--filled icobox__icon--lg icobox__icon--circle");
+            }
+        }
+
+        //computador
+        var jogada2 = $("#JogadaJogador2").val();
+        var tesoura1 = $("#btnTesoura2");
+        var pedra1 = $("#btnPedra2");
+        var papel1 = $("#btnPapel2");
+
+        if (jogada2 != null) {
+            if (jogada2 == "Papel") {
+                papel1.removeClass("icobox__icon icobox__icon--border icobox__icon--lg icobox__icon--circle").addClass("icobox__icon icobox__icon--filled icobox__icon--lg icobox__icon--circle");
+            }
+            else if (jogada2 == "Tesoura") {
+                tesoura1.removeClass("icobox__icon icobox__icon--border icobox__icon--lg icobox__icon--circle").addClass("icobox__icon icobox__icon--filled icobox__icon--lg icobox__icon--circle");
+            }
+            else if (jogada2 == "Pedra") {
+                pedra1.removeClass("icobox__icon icobox__icon--border icobox__icon--lg icobox__icon--circle").addClass("icobox__icon icobox__icon--filled icobox__icon--lg icobox__icon--circle");
+            }
+        }
+    })
+
+</script>

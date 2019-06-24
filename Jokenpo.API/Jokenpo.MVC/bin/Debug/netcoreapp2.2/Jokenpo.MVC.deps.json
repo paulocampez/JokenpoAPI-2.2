@@ -24,6 +24,7 @@
     ".NETCoreApp,Version=v2.2": {
       "Jokenpo.MVC/1.0.0": {
         "dependencies": {
+          "Jokenpo.Model": "1.0.0",
           "Microsoft.AspNetCore.App": "2.2.0",
           "Microsoft.AspNetCore.Razor.Design": "2.2.0",
           "Microsoft.NETCore.App": "2.2.0"
@@ -33,6 +34,14 @@
         },
         "compile": {
           "Jokenpo.MVC.dll": {}
+        }
+      },
+      "Jokenpo.Model/1.0.0": {
+        "runtime": {
+          "Jokenpo.Model.dll": {}
+        },
+        "compile": {
+          "Jokenpo.Model.dll": {}
         }
       },
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
@@ -3233,6 +3242,11 @@
   },
   "libraries": {
     "Jokenpo.MVC/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Jokenpo.Model/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

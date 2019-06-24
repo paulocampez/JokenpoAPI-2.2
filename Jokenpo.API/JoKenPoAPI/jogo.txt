@@ -2,3 +2,5 @@ Paulo;Computador;24/06/2019 15:23:57;Jogador1;2;Paulo
 Paulo;Computador;24/06/2019 15:23:57;Jogador1;2;Paulo
 Paulo;Computador;24/06/2019 15:23:57;Jogador1;2;Paulo
 Paulo;Computador;24/06/2019 15:23:57;Jogador1;2;Paulo
+Paulo;Computador;24/06/2019 16:27:53;Jogador1;1;Paulo
+Beneti;Computador;24/06/2019 16:28:24;Jogador2;2;Empate

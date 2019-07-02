@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace JoKenPoAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/Values")]
     [ApiController]
     public class ValuesController : ControllerBase
     {
@@ -22,8 +22,11 @@ namespace JoKenPoAPI.Controllers
             _context = context;
         }
 
-        // GET api/values
-        [HttpGet]
+        /// <summary>
+        /// Retorna Todos os Funcionarios
+        /// </summary>
+        /// <returns></returns>
+        [Microsoft.AspNetCore.Mvc.HttpGet]
         public ActionResult<List<Jogo>> Get()
         {
             var context = new Context(new  FileStrategy());

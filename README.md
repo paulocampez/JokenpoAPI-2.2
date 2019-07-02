@@ -26,3 +26,14 @@ Install-Package Swashbuckle.AspNetCore -Version 4.0.1
 ## Como Testar
 - Para testar a aplicação MVC é necessário rodar o WebAPI para realizar as consultas.
 - Adicionar caminho do XML nas configurações do projeto 
+
+## Swagger
+![ASPNETCOREWebAPIVersions](./ss/swagger.png)
+
+
+## Tela de Inicio
+![ASPNETCOREWebAPIVersions](./ss/inicio.png)
+
+
+## Tela ddo Jogo
+![ASPNETCOREWebAPIVersions](./ss/jogo.png)
